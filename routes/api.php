@@ -3,6 +3,7 @@
 use App\Http\Controllers\Basketball_API;
 use App\Http\Controllers\Cricksal_API;
 use App\Http\Controllers\User_controller;
+use App\Http\Controllers\UserRegistration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,5 +27,5 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 
     });
 
-
+Route::post("register",[UserRegistration::class,'index']);
 Route::post("login",[User_controller::class,'index']);
